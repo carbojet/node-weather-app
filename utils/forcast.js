@@ -8,7 +8,7 @@ const forcast = (latitude, longitude, callback) =>{
         }else if(body.error){
             callback('Unable to Connect to weather service!',undefined)
         }else{
-            callback(undefined,'It is Currently '+ body.current.temperature+ ' degress out. It Feals like '+body.current.feelslike+' degress out')
+            callback(undefined,body.current.weather_descriptions[0]+" It is currently "+ body.current.temperature + " degress out .It feels like " + body.current.feelslike + " degress out. The humidityis " + body.current.humidity + "%")
         }
     })
 }
